@@ -1,0 +1,20 @@
+{
+  "name": "c",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "cypress": "^14.2.0",
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "cypress-terminal-report": "^7.1.0",
+    "mochawesome-report-generator": "^6.2.0"
+  },
+  "dependencies": {
+    "cypress-file-upload": "^5.0.8"
+  }
+}
