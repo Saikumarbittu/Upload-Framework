@@ -30,7 +30,10 @@ const naukri = new NaukriLocators();
 
 export function LoginNaukri(){
 
-     cy.visit('https://www.naukri.com/',{ headers:{'accept-encoding': 'gzip, deflate'}})
+     cy.visit('https://www.naukri.com/',{ headers: {
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
+      'Accept-Language': 'en-US,en;q=0.9'
+    }})
      naukri.homelgbtn().click();
      naukri.rightside().should('be.visible');
      naukri.Email().type("deshaganisaikumar@gmail.com");
