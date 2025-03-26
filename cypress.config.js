@@ -18,7 +18,7 @@ module.exports = defineConfig({
     },
   },
   e2e: {
-    baseUrl: "https://www.naukri.com/",
+
     chromeWebSecurity: false,
     pageLoadTimeout: 120000,
     setupNodeEvents(on, config) {
