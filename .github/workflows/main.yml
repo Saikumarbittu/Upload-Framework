@@ -31,6 +31,7 @@ jobs:
           browser: chrome
           spec: cypress/e2e/Naukri.cy.js
           config: chromeWebSecurity=false
+          pageLoadTimeout: 120000
 
       - name: Generate HTML Reports
         if: always()
