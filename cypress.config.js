@@ -21,7 +21,7 @@ module.exports = defineConfig({
   },
   e2e: {
 
-
+    baseUrl: "https://www.naukri.com",
     pageLoadTimeout: 60000, // Set to 60 seconds
     defaultCommandTimeout: 60000, // Optional: Adjust for slow responses
     chromeWebSecurity: false,

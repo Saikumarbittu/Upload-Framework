@@ -44,8 +44,8 @@ const naukri = new NaukriLocators();
 const SkillText='Cypress'
 export function LoginNaukri(){
 
-  cy.visit('https://www.naukri.com/nlogin/login?err=1', {
-    timeout: 60000,
+  cy.visit('/nlogin/login?err=1', {
+    timeout: 30000,
     headers: {
       'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
       'Accept-Language': 'en-US,en;q=0.9'
@@ -75,7 +75,7 @@ export function RemoveKeyskill(){
   try {
     naukri.profilebtn().should('be.visible').click();
     //Click on Edit skill button
-    naukri.Skilleditbtn().scrollIntoView().click();
+    naukri.Skilleditbtn().click();
     // Find and filter the element with specific text
     naukri.Skillset().then(($el)=>{
       if($el.text().includes(SkillText)){
