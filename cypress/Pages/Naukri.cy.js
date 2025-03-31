@@ -44,11 +44,11 @@ const naukri = new NaukriLocators();
 const SkillText='Cypress'
 export function LoginNaukri(){
 
-     cy.visit('https://www.naukri.com/',{ headers: {
+     cy.visit('https://www.naukri.com/',{timeout: 60000},{ headers: {
       'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
       'Accept-Language': 'en-US,en;q=0.9'
     }})
-     naukri.homelgbtn().click();
+     naukri.homelgbtn().should('be.visible').click();
      naukri.rightside().should('be.visible');
      naukri.Email().should('be.enabled').type("deshaganisaikumar@gmail.com");
      naukri.Pwdfield().should('be.enabled').type("Saikumar@007");
@@ -78,7 +78,7 @@ export function RemoveKeyskill(){
         // Find the element containing the text
          .parent() // Navigate to the parent if needed
          .find("a.material-icons.close") // Correctly target the close button using class selector
-        .click();
+         .click();
          //Click on Save button
       }else{
         cy.log("Skill is not present")
