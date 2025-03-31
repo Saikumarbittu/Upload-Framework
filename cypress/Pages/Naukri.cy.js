@@ -3,16 +3,16 @@ class NaukriLocators{
         return cy.get('#login_Layer')
       }
       Email(){
-        return cy.get("input[placeholder='Enter your active Email ID / Username']")
+        return cy.get("#usernameField")
       }
       Pwdfield(){
-        return cy.get("input[placeholder='Enter your password']")
+        return cy.get("#passwordField")
       }
       rightside(){
         return cy.get('.naukri-drawer.right.open')
       }
       submitbtn(){
-        return cy.get("button[type='submit']")
+        return cy.get(".blue-btn")
       }
       profilebtn(){
         return cy.get("a[href='/mnjuser/profile']").first()
@@ -44,16 +44,16 @@ const naukri = new NaukriLocators();
 const SkillText='Cypress'
 export function LoginNaukri(){
 
-  cy.visit('https://www.naukri.com/', {
+  cy.visit('https://www.naukri.com/nlogin/login?err=1', {
     timeout: 60000,
     headers: {
       'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
       'Accept-Language': 'en-US,en;q=0.9'
     }
   });
-  cy.wait(20000);
-     naukri.homelgbtn().should('be.visible').click();
-     naukri.rightside().should('be.visible');
+
+     //naukri.homelgbtn().should('be.visible').click();
+    // naukri.rightside().should('be.visible');
      naukri.Email().should('be.enabled').type("deshaganisaikumar@gmail.com");
      naukri.Pwdfield().should('be.enabled').type("Saikumar@007");
      naukri.submitbtn().click();
