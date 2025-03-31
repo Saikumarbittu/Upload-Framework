@@ -1,8 +1,9 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+
   projectId: "egc8jw",
-  defaultCommandTimeout: 40000,
+
   video: false,
   reporter: 'cypress-mochawesome-reporter', //for html reports
   reporterOptions: {
@@ -20,8 +21,11 @@ module.exports = defineConfig({
   },
   e2e: {
 
+
+    pageLoadTimeout: 60000, // Set to 60 seconds
+    defaultCommandTimeout: 40000, // Optional: Adjust for slow responses
     chromeWebSecurity: false,
-    pageLoadTimeout: 120000,
+
     setupNodeEvents(on, config) {
       // Add your node event listeners here if needed
 

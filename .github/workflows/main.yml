@@ -29,9 +29,11 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           browser: chrome
-          spec: cypress/e2e/Naukri.cy.js
-          config: chromeWebSecurity=false
-          pageLoadTimeout: 120000
+          config: baseUrl=https://www.naukri.com
+          env: ENV=staging
+          spec: cypress/e2e/*.cy.js
+
+
 
       - name: Generate HTML Reports
         if: always()
