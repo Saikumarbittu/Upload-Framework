@@ -44,10 +44,13 @@ const naukri = new NaukriLocators();
 const SkillText='Cypress'
 export function LoginNaukri(){
 
-     cy.visit('https://www.naukri.com/',{timeout: 60000},{ headers: {
+  cy.visit('https://www.naukri.com/', {
+    timeout: 60000,
+    headers: {
       'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
       'Accept-Language': 'en-US,en;q=0.9'
-    }})
+    }
+  });
      naukri.homelgbtn().should('be.visible').click();
      naukri.rightside().should('be.visible');
      naukri.Email().should('be.enabled').type("deshaganisaikumar@gmail.com");
