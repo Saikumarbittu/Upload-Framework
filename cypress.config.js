@@ -23,7 +23,7 @@ module.exports = defineConfig({
 
 
     pageLoadTimeout: 60000, // Set to 60 seconds
-    defaultCommandTimeout: 40000, // Optional: Adjust for slow responses
+    defaultCommandTimeout: 60000, // Optional: Adjust for slow responses
     chromeWebSecurity: false,
 
     setupNodeEvents(on, config) {

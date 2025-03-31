@@ -22,11 +22,8 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           browser: chrome
-
           env: ENV=staging
           spec: cypress/e2e/Naukri.cy.js
-
-
 
       - name: Generate HTML Reports
         if: always()
