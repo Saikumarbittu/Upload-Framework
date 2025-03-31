@@ -62,9 +62,10 @@ export function LoginNaukri(){
 }
 export function UploadResume(){
   LoginNaukri();
+  cy.wait(3000)
   naukri.profilebtn().should('be.visible').click()
   naukri.uploadbtn().scrollIntoView().attachFile('Deshagani_Saikumar-2025.pdf');
-  cy.wait(3000)
+
   naukri.successmsg().should('have.text','Deshagani_Saikumar-2025.pdf');
 }
 

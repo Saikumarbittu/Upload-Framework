@@ -4,9 +4,16 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    container:
+      image: cypress/included:14.1.0
+      options: --shm-size=2g
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: Clear Cypress Cache
+        run: npx cypress cache clear
+      - name: Install Cypress
+        run: npx cypress install
 
       - name: Run Cypress Tests
         uses: cypress-io/github-action@v6
@@ -14,4 +21,10 @@ jobs:
           browser: chrome
           env: ENV=staging
           spec: cypress/e2e/Naukri.cy.js
+      - name: Cypress Test Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+            name: Mochawesome HTML Report
+            path: cypress/reports/html
 
