@@ -51,6 +51,7 @@ export function LoginNaukri(){
       'Accept-Language': 'en-US,en;q=0.9'
     }
   });
+  cy.wait(20000);
      naukri.homelgbtn().should('be.visible').click();
      naukri.rightside().should('be.visible');
      naukri.Email().should('be.enabled').type("deshaganisaikumar@gmail.com");

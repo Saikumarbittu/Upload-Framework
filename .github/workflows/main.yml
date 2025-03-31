@@ -29,9 +29,9 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           browser: chrome
-          config: baseUrl=https://www.naukri.com
+
           env: ENV=staging
-          spec: cypress/e2e/*.cy.js
+          spec: cypress/e2e/Naukri.cy.js
 
 
 
