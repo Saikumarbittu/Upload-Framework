@@ -27,7 +27,7 @@ class NaukriLocators{
           return cy.xpath("//div[@class='widgetHead typ-16Bold']//span[@class='edit icon']")
         }
         Skillset(){
-          return cy.get("//div[@class='waves-effect chip']//span[@class='tagTxt']");//return 20 elements
+          return cy.xpath("//div[@class='waves-effect chip']//span[@class='tagTxt']");//return 20 elements
         }
         skillsavebtn(){
           return cy.get("#saveKeySkills")
@@ -44,14 +44,10 @@ const naukri = new NaukriLocators();
 const SkillText='Cypress'
 export function LoginNaukri(){
 
-  cy.visit('/nlogin/login?err=1', {
-    timeout: 30000,
-    headers: {
-      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
-      'Accept-Language': 'en-US,en;q=0.9'
-    }
-  });
 
+
+
+    cy.visitHome();
      //naukri.homelgbtn().should('be.visible').click();
     // naukri.rightside().should('be.visible');
      naukri.Email().should('be.enabled').type("deshaganisaikumar@gmail.com");

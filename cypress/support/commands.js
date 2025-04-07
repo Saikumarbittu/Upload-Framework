@@ -23,6 +23,15 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add("visitHome", () => {
+   cy.visit('https://www.naukri.com/nlogin/login', {
+     timeout: 30000,
+     headers: {
+       'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
+       'Accept-Language': 'en-US,en;q=0.9'
+     }
+   });
+ });
 
 /// <reference types="cypress"/>
 
