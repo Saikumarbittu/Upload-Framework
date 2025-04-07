@@ -24,7 +24,7 @@ class NaukriLocators{
         return cy.get(".truncate.exten")
       }
         Skilleditbtn(){
-          return cy.xpath("div[class='widgetHead typ-16Bold'] span[class='edit icon']")
+          return cy.xpath("//div[@class='widgetHead typ-16Bold']//span[@class='edit icon']")
         }
         Skillset(){
           return cy.get("div[class*='waves-effect chip'] span[class='tagTxt']");//return 20 elements

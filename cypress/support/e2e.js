@@ -18,7 +18,7 @@ import './commands'
 import 'cypress-file-upload';
 import 'cypress-mochawesome-reporter/register';
 
-//import 'cypress-xpath';//we should include this here to use xpath
+import 'cypress-xpath';//we should include this here to use xpath
 
 
 Cypress.on('uncaught:exception', (err, runnable) => {
