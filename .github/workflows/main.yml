@@ -2,8 +2,8 @@ name: Cypress-Upload Resume
 on:
   push:
     branches:
-      - main
-      - test
+      - master
+
 jobs:
   cypress-run:
     runs-on: ubuntu-24.04
