@@ -15,7 +15,7 @@ class NaukriLocators{
         return cy.get(".blue-btn")
       }
       profilebtn(){
-        return cy.get("div[class='view-profile-wrapper'] a")
+        return cy.xpath("//div[@class='view-profile-wrapper']//a")
       }
       uploadbtn(){
         return cy.get("input[type='file']").filter('[id="attachCV"]')
@@ -27,7 +27,7 @@ class NaukriLocators{
           return cy.xpath("//div[@class='widgetHead typ-16Bold']//span[@class='edit icon']")
         }
         Skillset(){
-          return cy.get("div[class*='waves-effect chip'] span[class='tagTxt']");//return 20 elements
+          return cy.get("//div[@class='waves-effect chip']//span[@class='tagTxt']");//return 20 elements
         }
         skillsavebtn(){
           return cy.get("#saveKeySkills")
