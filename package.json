@@ -1,11 +1,13 @@
 {
-  "name": "c",
+  "name": "cypress-automation",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "test:MyTest": "npx cypress run --spec Upload-Resume/cypress/e2e/Naukri.cy.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+ "scripts": {
+  "start": "echo \"No start script needed\"",
+  "test:MyTest": "npx cypress run --spec Upload-Resume/cypress/e2e/Naukri.cy.js",
+  "test": "echo \"Error: no test specified\" && exit 1"
+},
+
   "author": "",
   "license": "ISC",
   "description": "",
