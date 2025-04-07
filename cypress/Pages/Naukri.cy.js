@@ -15,7 +15,7 @@ class NaukriLocators{
         return cy.get(".blue-btn")
       }
       profilebtn(){
-        return cy.get("a[href='/mnjuser/profile']").first()
+        return cy.get("div[class='view-profile-wrapper'] a")
       }
       uploadbtn(){
         return cy.get("input[type='file']").filter('[id="attachCV"]')
@@ -24,7 +24,7 @@ class NaukriLocators{
         return cy.get(".truncate.exten")
       }
         Skilleditbtn(){
-          return cy.get("div[class='widgetHead typ-16Bold'] span[class='edit icon']")
+          return cy.xpath("div[class='widgetHead typ-16Bold'] span[class='edit icon']")
         }
         Skillset(){
           return cy.get("div[class*='waves-effect chip'] span[class='tagTxt']");//return 20 elements
@@ -75,7 +75,7 @@ export function RemoveKeyskill(){
   try {
     naukri.profilebtn().should('be.visible').click();
     //Click on Edit skill button
-    naukri.Skilleditbtn().click();
+    naukri.Skilleditbtn().click({ force: true });
     // Find and filter the element with specific text
     naukri.Skillset().then(($el)=>{
       if($el.text().includes(SkillText)){

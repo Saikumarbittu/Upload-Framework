@@ -4,9 +4,7 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-    container:
-      image: cypress/included:14.1.0
-      options: --shm-size=2g
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -19,7 +17,6 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           browser: chrome
-          env: ENV=staging
           spec: cypress/e2e/Naukri.cy.js
       - name: Cypress Test Report
         if: always()
