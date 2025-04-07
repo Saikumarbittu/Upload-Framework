@@ -1,27 +1,29 @@
-name: Run Cypress Tests
-
+name: Cypress-Upload Resume
 on:
   push:
     branches:
       - main
-  pull_request:
-
+      - test
 jobs:
   cypress-run:
-    runs-on: ubuntu-latest
-
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Use Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run Cypress tests
+      - name: Checkout code
+        uses: actions/checkout@v4
+      # Install npm dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Install Dependencies
+        run: npm install
+      - name:  Run Cypress Tests
         uses: cypress-io/github-action@v6
         with:
-          start: npm start  # or your app's start script, or leave blank
+         browser: chrome
+
+      - name: Generate  Html Reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: My-TestCases
+           # or path/to/artifact
+          path: cypress/reports/html
+
