@@ -2,7 +2,7 @@ import {LoginNaukri, UploadResume, RemoveKeyskill,AddSkill} from '../Pages/Naukr
 
 const Skills = {Cypress}
 
-describe('template spec', () => {
+describe.only('template spec', () => {
   it('Login Naukri & Upload Resume ', () => {
     UploadResume();
     cy.task('logMessage',"Uploaded Resume in Naukri succesfully")

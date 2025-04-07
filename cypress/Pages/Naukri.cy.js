@@ -54,6 +54,8 @@ export function LoginNaukri(){
      naukri.Pwdfield().should('be.enabled').type("Saikumar@007");
      naukri.submitbtn().click();
      cy.wait(2000);
+     cy.window().should('have.property', 'document');
+     cy.task('logMessage',"Log in Succesfully")
 
 }
 export function UploadResume(){
